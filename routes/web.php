@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\loginController;
 
 //todo ==> create user
 //todo ==> login user
@@ -23,3 +23,4 @@ use App\Http\Controllers\UserController;
 Route::get('/register',[ UserController::class,"create"])->name('register') ;
 Route::post('/register/save',[ UserController::class,"store"])->name('saveUser') ;
 
+Route::get('/login',[loginController::class,"index" ])->name('login');
