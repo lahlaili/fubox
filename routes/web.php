@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
+
+//todo ==> create user
+//todo ==> login user
+//todo ==> login->home page
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/register',[ UserController::class,"create"])->name('register') ;
+Route::post('/register/save',[ UserController::class,"store"])->name('saveUser') ;
+
